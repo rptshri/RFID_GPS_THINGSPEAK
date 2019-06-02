@@ -1,6 +1,4 @@
-/*
- *  Created by TheCircuit
-*/
+
 
 #define SS_PIN 2  //D4
 #define RST_PIN 0 //D3

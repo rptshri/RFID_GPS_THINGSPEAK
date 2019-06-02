@@ -1,11 +1,14 @@
 #include "UbidotsMicroESP8266.h"
 
 #define TOKEN  "A1E-E9Civ0PCH1OO4TRZEUz99w2qCnWR9c"  // Put here your Ubidots TOKEN
-#define WIFISSID "Infinity" // Put here your Wi-Fi SSID
+#define WIFISSID "SPAMer" // Put here your Wi-Fi SSID
 #define PASSWORD "        " // Put here your Wi-Fi password
 
 Ubidots client(TOKEN);
 
+
+char str_temp[25];
+char str_temp2[25];
 
 void setup() {
   Serial.begin(9600);
@@ -17,9 +20,12 @@ void loop() {
   char context[25];
   double latitude = 6.031212;
   double longitude = 73.148125;
-  sprintf(context, "lat=%.2f$lng=%.2f", latitude, longitude); //Sends latitude and longitude for watching position in a map
-  Serial.println(context);
-  client.add("gps", context);  // Change for your variable name
+  dtostrf(latitude, 8, 5, str_temp);
+  dtostrf(longitude, 8, 5, str_temp2);
+
+
+  client.add("str_temp", latitude);
+  //  client.add("str_temp2", str_temp2);
   client.sendAll(true);
   delay(100);
 }
