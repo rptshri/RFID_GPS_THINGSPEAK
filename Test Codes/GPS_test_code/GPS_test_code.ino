@@ -5,7 +5,7 @@
    It requires the use of SoftwareSerial, and assumes that you have a
    4800-baud serial GPS device hooked up on pins 4(rx) and 3(tx).
 */
-static const int RXPin = 5, TXPin = 4;        //TX to D1 and RX to D2
+static const int RXPin = 0, TXPin = 2;        //TX to D3 and RX to D4
 static const uint32_t GPSBaud = 9600;
 
 // The TinyGPS++ object
@@ -19,18 +19,14 @@ void setup()
   Serial.begin(9600);
   ss.begin(GPSBaud);
 
-  Serial.println(F("DeviceExample.ino"));
-  Serial.println(F("A simple demonstration of TinyGPS++ with an attached GPS module"));
-  Serial.print(F("Testing TinyGPS++ library v. ")); Serial.println(TinyGPSPlus::libraryVersion());
-  Serial.println(F("by Mikal Hart"));
-  Serial.println();
+  
 }
 
 void loop()
 {
   // This sketch displays information every time a new sentence is correctly encoded.
   while (ss.available() > 0)
-    if (gps.encode(ss.read()))
+    if (gps.encode(ss.read()))    //fn
       displayInfo();
 
   if (millis() > 5000 && gps.charsProcessed() < 10)

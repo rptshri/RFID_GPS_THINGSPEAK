@@ -1,8 +1,8 @@
 #include "UbidotsMicroESP8266.h"
 
-#define TOKEN  "A1E-E9Civ0PCH1OO4TRZEUz99w2qCnWR9c"  // Put here your Ubidots TOKEN
-#define WIFISSID "SPAMer" // Put here your Wi-Fi SSID
-#define PASSWORD "        " // Put here your Wi-Fi password
+#define TOKEN  "A1E-N6Gf7ttRwp6BjyaG2EEQDLtXbTg94V"  // Put here your Ubidots TOKEN
+#define WIFISSID "SPAM" // Put here your Wi-Fi SSID
+#define PASSWORD "12345678" // Put here your Wi-Fi password
 
 Ubidots client(TOKEN);
 
@@ -18,14 +18,13 @@ void setup() {
 }
 void loop() {
   char context[25];
-  double latitude = 6.031212;
-  double longitude = 73.148125;
-  dtostrf(latitude, 8, 5, str_temp);
-  dtostrf(longitude, 8, 5, str_temp2);
+  int latitude = 124;
+    int lat1= 50;
+  
 
 
   client.add("str_temp", latitude);
-  //  client.add("str_temp2", str_temp2);
+    client.add("str_temp2", lat1);
   client.sendAll(true);
   delay(100);
 }
