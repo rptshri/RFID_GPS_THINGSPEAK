@@ -66,9 +66,6 @@ void loop()
 
       RFIDcheck();
 
-      //      if (currentMillis - previousMillis >= interval)
-      //      {
-      //        previousMillis = currentMillis;
       if (flag == 1 && one == true)
       {
         if (gps.location.isValid())

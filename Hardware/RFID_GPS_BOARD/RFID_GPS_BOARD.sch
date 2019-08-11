@@ -59,8 +59,6 @@ Text Label 9600 1950 0    50   ~ 0
 GPS_TX
 Text Label 9600 2350 0    50   ~ 0
 SCK
-Text Label 9600 2550 0    50   ~ 0
-MOSI
 Text Label 9600 2650 0    50   ~ 0
 SS
 Text Label 9600 2450 0    50   ~ 0
@@ -292,8 +290,6 @@ Wire Wire Line
 	5950 3400 5950 3500
 Text Label 5750 3500 0    50   ~ 0
 MISO
-Text Label 5650 3600 0    50   ~ 0
-MOSI
 Text Label 5550 3700 0    50   ~ 0
 SCK
 Text Label 5450 3800 0    50   ~ 0
@@ -302,8 +298,6 @@ Wire Wire Line
 	5450 3400 5450 3800
 Wire Wire Line
 	5550 3400 5550 3700
-Wire Wire Line
-	5650 3600 5650 3400
 Wire Wire Line
 	5750 3500 5750 3400
 NoConn ~ 5850 3400
@@ -535,4 +529,10 @@ Wire Wire Line
 Wire Wire Line
 	2250 1400 2250 1500
 Connection ~ 2250 1500
+Text Label 5650 3600 0    50   ~ 0
+MOSI
+Wire Wire Line
+	5650 3600 5650 3400
+Text Label 9600 2550 0    50   ~ 0
+MOSI
 $EndSCHEMATC
